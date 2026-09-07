@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Atelier Roast — Specialty Coffee &amp; Roastery</title>
-<meta name="description" content="Crafted with care, served with warmth. Atelier Roast is a specialty coffee roastery devoted to slow roasting and quiet European café culture.">
+<title>Kaui.co — Specialty Coffee &amp; Roastery</title>
+<meta name="description" content="Crafted with care, served with warmth. Kaui.co is a specialty coffee roastery devoted to slow roasting and quiet European café culture.">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -12,9 +12,9 @@
 <header class="site-header">
   <div class="container header-inner">
     <a class="brand" href="index.html">
-      <span class="brand-mark">AR</span>
+      <img class="brand-mark-img" src="assets/kaui-logo.jpg" alt="Kaui.co logo">
       <span class="brand-text">
-        <span class="brand-name">Atelier Roast</span>
+        <span class="brand-name">Kaui.co</span>
         <span class="brand-sub">Specialty Coffee &amp; Roastery</span>
       </span>
     </a>
@@ -27,10 +27,6 @@
       <a href="franchise.html">Franchise</a>
     </nav>
     <div class="header-actions">
-      <div class="search-pill">
-        <span class="i">⌕</span>
-        <input type="text" placeholder="Search origins, roasts…" aria-label="Search">
-      </div>
       <a class="btn btn-dark btn-sm" href="menu.html">View Menu</a>
       <span class="icon-btn" aria-hidden="true">☺</span>
       <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
@@ -98,17 +94,17 @@
   <!-- FEATURED CATEGORIES -->
   <section class="bg-dark section-pad">
     <div class="container">
-      <div class="section-head">
+      <div class="section-head" data-reveal>
         <div>
           <span class="eyebrow">Curated Roastery Bar</span>
           <h2 style="margin-top:.25rem;">Find Your Favorite</h2>
         </div>
         <p>Explore three pillars of our artisanal beverage craft, extracted to highlight botanical terroirs and rounded mouthfeel.</p>
       </div>
-      <div class="grid grid-3">
+      <div class="grid grid-3" data-reveal-group>
         <article class="dark-card">
           <div class="card-media" style="aspect-ratio:16/11;">
-            <img src="images/coffee1.jpg" alt="Espresso shot with thick crema in a demitasse">
+            <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?q=80&w=900&auto=format&fit=crop" alt="Espresso shot with thick crema in a demitasse">
             <span style="position:absolute;top:1rem;right:1rem;background:rgba(251,249,245,.12);backdrop-filter:blur(6px);color:var(--surface-bright);padding:.25rem .75rem;border-radius:var(--radius-full);font-size:11px;font-weight:600;">01</span>
           </div>
           <div class="card-body">
@@ -164,14 +160,14 @@
   <!-- SIGNATURE DRINKS -->
   <section class="bg-surface section-pad">
     <div class="container">
-      <div class="section-head">
+      <div class="section-head" data-reveal>
         <div>
           <span class="eyebrow">Crafted Masterpieces</span>
           <h2 style="margin-top:.25rem;">Our Signature Drinks</h2>
         </div>
         <p class="muted">Made for those moments when ordinary coffee simply isn't enough. Thoughtfully layered with seasonal accents.</p>
       </div>
-      <div class="grid grid-4">
+      <div class="grid grid-4" data-reveal-group>
         <article class="card">
           <div class="card-media">
             <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=700&auto=format&fit=crop" alt="Purple ube latte in a tall glass">
@@ -263,7 +259,7 @@
           </div>
         </div>
       </div>
-      <div class="stack-lg" data-reveal>
+      <div class="stack-lg" data-reveal style="transition-delay:120ms;">
         <div>
           <span class="eyebrow">Private Events • Meetings • Gatherings</span>
           <h2 style="margin-top:.35rem;">Make Space for Something Special</h2>
@@ -287,12 +283,12 @@
   <!-- FRANCHISE PROMO -->
   <section class="bg-dark section-pad">
     <div class="container">
-      <div class="center stack-sm mx-auto" style="max-width:38rem;">
+      <div class="center stack-sm mx-auto" style="max-width:38rem;" data-reveal>
         <span class="eyebrow">Partnership &amp; Growth</span>
-        <h2>Bring Atelier Roast to Your City</h2>
+        <h2>Bring Kaui.co to Your City</h2>
         <p>Join our network of discerning cafe partners committed to coffee excellence, curated interiors, and slow community hospitality.</p>
       </div>
-      <div class="grid grid-3" style="margin-top:2.5rem;margin-bottom:2.5rem;">
+      <div class="grid grid-3" style="margin-top:2.5rem;margin-bottom:2.5rem;" data-reveal-group>
         <div style="background:var(--tertiary-container);border-radius:var(--radius-xl);padding:1.75rem;">
           <div style="width:3rem;height:3rem;border-radius:var(--radius-md);background:var(--primary-container);color:var(--secondary-container);display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:1rem;">◆</div>
           <h3 style="color:var(--surface-bright);font-weight:600;">Built Around Coffee</h3>
@@ -319,8 +315,8 @@
   <div class="container footer-grid">
     <div>
       <div style="display:flex;align-items:center;gap:.6rem;">
-        <span class="brand-mark" style="background:var(--surface-bright);color:var(--primary);">AR</span>
-        <span class="brand-name" style="color:var(--surface-bright);">Atelier Roast</span>
+        <img class="brand-mark-img" src="assets/kaui-logo.jpg" alt="Kaui.co logo">
+        <span class="brand-name" style="color:var(--surface-bright);">Kaui.co</span>
       </div>
       <p style="font-family:var(--font-serif);font-style:italic;font-size:20px;color:var(--surface-container-high);margin-top:1rem;max-width:22rem;">Coffee, crafted for every moment.</p>
       <p class="text-sm" style="color:var(--on-primary-container);margin-top:.75rem;max-width:26rem;">Dedicated to elevating bean selection, artisanal roasting profiles, and intimate tasting experiences in European-inspired spaces.</p>
@@ -358,13 +354,13 @@
       <ul>
         <li><a href="#">Instagram</a></li>
         <li><a href="#">Facebook Gazette</a></li>
-        <li><a href="mailto:concierge@atelierroast.com">concierge@atelierroast.com</a></li>
+        <li><a href="mailto:concierge@kaui.co">concierge@kaui.co</a></li>
         <li><span style="color:var(--on-primary-container);font-size:13px;">+44 (0) 20 7946 0912</span></li>
       </ul>
     </div>
   </div>
   <div class="container footer-bottom">
-    <p>© 2025 Atelier Roast Specialty Roasters. Crafted with quiet precision.</p>
+    <p>© 2025 Kaui.co Specialty Roasters. Crafted with quiet precision.</p>
     <div class="legal">
       <a href="#">Privacy Policy</a>
       <a href="#">Terms of Service</a>

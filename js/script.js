@@ -97,14 +97,45 @@ document.addEventListener('DOMContentLoaded', () => {
     applyFilters();
   }
 
-  /* ---- Simple reveal-on-load for hero (single orchestrated moment) ---- */
-  document.querySelectorAll('[data-reveal]').forEach((el, i) => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(12px)';
-    requestAnimationFrame(() => {
-      el.style.transition = `opacity .5s ease ${i * 80}ms, transform .5s ease ${i * 80}ms`;
-      el.style.opacity = '1';
-      el.style.transform = 'translateY(0)';
+  /* ---- Elegant scroll reveal ----
+     Any element with [data-reveal] fades/rises in once it enters the
+     viewport. Any element with [data-reveal-group] has its direct
+     children auto-tagged and staggered, so whole grids (cards, pillars,
+     menu items) animate in one after another rather than all at once. */
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  document.querySelectorAll('[data-reveal-group]').forEach(group => {
+    Array.from(group.children).forEach((child, i) => {
+      child.classList.add('reveal');
+      child.style.transitionDelay = prefersReducedMotion ? '0ms' : `${Math.min(i, 8) * 90}ms`;
+    });
+  });
+
+  document.querySelectorAll('[data-reveal]').forEach(el => el.classList.add('reveal'));
+
+  if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
+  } else {
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+  }
+
+  /* ---- Smooth scroll for in-page anchor links (e.g. footer, "#top") ---- */
+  document.querySelectorAll('a[href^="#"]:not([href="#"])').forEach(link => {
+    link.addEventListener('click', (e) => {
+      const target = document.querySelector(link.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: prefersReducedMotion ? 'auto' : 'smooth', block: 'start' });
+      }
     });
   });
 

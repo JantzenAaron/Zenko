@@ -145,6 +145,12 @@ h4{ font-size:18px; line-height:26px; }
   display:flex; align-items:center; justify-content:center;
   font-family:var(--font-serif); font-weight:600; font-size:16px;
 }
+.brand-mark-img{
+  width:2.5rem; height:2.5rem; border-radius:var(--radius-md);
+  object-fit:cover; flex-shrink:0; box-shadow:var(--shadow-sm);
+  transition:transform .3s ease;
+}
+.brand:hover .brand-mark-img{ transform:scale(1.04) rotate(-2deg); }
 .brand-text{ display:flex; flex-direction:column; line-height:1; }
 .brand-name{ font-family:var(--font-serif); font-weight:700; font-size:16px; letter-spacing:.01em; text-transform:uppercase; color:var(--primary); }
 .brand-sub{ font-size:10px; font-weight:600; letter-spacing:.12em; text-transform:uppercase; color:var(--secondary); margin-top:2px; }
@@ -316,10 +322,48 @@ textarea.field{ height:auto; padding-block:.85rem; resize:vertical; min-height:1
 }
 .toast.is-visible{ opacity:1; transform:translate(-50%,0); pointer-events:auto; }
 
+/* ---------- Elegant motion: page load + scroll reveal ---------- */
+html{ scroll-behavior:smooth; }
+
+body{ opacity:0; animation:page-fade-in .5s ease forwards; }
+@keyframes page-fade-in{ from{ opacity:0; } to{ opacity:1; } }
+
+/* Elements fade + rise into view as the user scrolls past them */
+.reveal{
+  opacity:0; transform:translateY(28px);
+  transition:opacity .7s cubic-bezier(.22,.61,.36,1), transform .7s cubic-bezier(.22,.61,.36,1);
+  will-change:opacity, transform;
+}
+.reveal.is-visible{ opacity:1; transform:translateY(0); }
+
+/* Nav underline sweep */
+.main-nav a{ position:relative; }
+.main-nav a::after{
+  content:""; position:absolute; left:0; right:100%; bottom:-1px; height:1px;
+  background:var(--primary); transition:right .3s ease;
+}
+.main-nav a:hover::after{ right:0; }
+.main-nav a.is-active::after{ display:none; }
+
+/* Softer, springier hover lift for cards + dark cards */
+.card, .dark-card{ transition:box-shadow .35s ease, transform .35s ease; }
+.card:hover, .dark-card:hover{ transform:translateY(-4px); }
+
+/* Buttons: gentle elevate + press */
+.btn{ transition:transform .25s cubic-bezier(.22,.61,.36,1), background-color .25s ease, color .25s ease, box-shadow .25s ease; }
+.btn-primary:hover{ transform:translateY(-2px); }
+.btn:active{ transform:translateY(0) scale(.98); }
+
+/* Chip transitions */
+.chip{ transition:background-color .25s ease, color .25s ease, border-color .25s ease, transform .2s ease; }
+.chip:hover{ transform:translateY(-1px); }
+
 /* ---------- Focus & motion ---------- */
 a:focus-visible, button:focus-visible, input:focus-visible{ outline:2px solid var(--secondary); outline-offset:2px; }
 @media (prefers-reduced-motion: reduce){
   *{ animation:none !important; transition:none !important; scroll-behavior:auto !important; }
+  body{ opacity:1; }
+  .reveal{ opacity:1 !important; transform:none !important; }
 }
 
 /* icon glyphs (letter-based, no external icon font dependency) */
