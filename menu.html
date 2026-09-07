@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menu — Atelier Roast</title>
+<meta name="description" content="The Atelier Collection: handcrafted coffee, non-coffee drinks, pastries, and savory brunch plates.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html">
+      <span class="brand-mark">AR</span>
+      <span class="brand-text">
+        <span class="brand-name">Atelier Roast</span>
+        <span class="brand-sub">Specialty Coffee &amp; Roastery</span>
+      </span>
+    </a>
+    <nav class="main-nav" aria-label="Primary">
+      <a href="index.html">Home</a>
+      <a href="menu.html" class="is-active" aria-current="page">Menu</a>
+      <a href="our-story.html">Our Story</a>
+      <a href="branches.html">Branches</a>
+      <a href="events.html">Events</a>
+      <a href="franchise.html">Franchise</a>
+    </nav>
+    <div class="header-actions">
+      <div class="search-pill">
+        <span class="i">⌕</span>
+        <input type="text" placeholder="Search origins, roasts…" aria-label="Search">
+      </div>
+      <a class="btn btn-dark btn-sm" href="menu.html">View Menu</a>
+      <span class="icon-btn" aria-hidden="true">☺</span>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span></button>
+    </div>
+  </div>
+  <nav class="mobile-nav" aria-label="Mobile">
+    <a href="index.html">Home</a>
+    <a href="menu.html" class="is-active">Menu</a>
+    <a href="our-story.html">Our Story</a>
+    <a href="branches.html">Branches</a>
+    <a href="events.html">Events</a>
+    <a href="franchise.html">Franchise</a>
+  </nav>
+</header>
+
+<main style="padding-top:5rem;">
+
+  <section class="bg-surface section-pad" style="padding-bottom:2rem;">
+    <div class="container">
+      <div class="section-head">
+        <div class="editorial">
+          <div style="display:flex;align-items:center;gap:.5rem;margin-bottom:.5rem;">
+            <span class="eyebrow">Curated Catalog • Volume IV</span>
+            <span style="display:inline-block;width:2rem;height:1px;background:rgba(124,85,68,.4);"></span>
+            <span class="eyebrow">Autumn 2025</span>
+          </div>
+          <h1 style="font-size:clamp(28px,4vw,44px);line-height:1.15;">The Atelier Collection <span class="italic" style="color:var(--secondary);">/ Our Menu</span></h1>
+          <p class="text-lg muted" style="margin-top:.75rem;">Something for every craving. Handcrafted beverages, artisanal pastries, and savory brunch plates pulled with uncompromising precision.</p>
+        </div>
+        <div class="pill-stat" style="align-items:flex-start;flex-direction:column;gap:.5rem;min-width:14rem;">
+          <span class="eyebrow">Roastery Tasting Bar</span>
+          <div style="display:flex;align-items:center;gap:.6rem;">
+            <span style="font-family:var(--font-serif);font-weight:600;color:var(--primary);">Barista Selected Daily</span>
+            <span class="icon-btn" style="background:var(--secondary-container);color:var(--on-secondary-container);">◔</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Search + filter -->
+      <div class="stack-md">
+        <div class="search-pill" style="display:flex;width:100%;max-width:36rem;padding:.75rem 1.1rem;">
+          <span class="i">⌕</span>
+          <input data-menu-search type="text" placeholder="Search drinks, food, pastries, or taste notes (e.g. ube, caramel, oat)…" style="width:100%;" aria-label="Search menu">
+        </div>
+        <div style="display:flex;flex-wrap:wrap;gap:.5rem;">
+          <button class="chip is-active" data-menu-filter="all">All</button>
+          <button class="chip" data-menu-filter="coffee">Coffee</button>
+          <button class="chip" data-menu-filter="non-coffee">Non-Coffee</button>
+          <button class="chip" data-menu-filter="iced">Iced</button>
+          <button class="chip" data-menu-filter="hot">Hot</button>
+          <button class="chip" data-menu-filter="pastries">Pastries</button>
+          <button class="chip" data-menu-filter="food">Food</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-surface" style="padding-bottom:3rem;">
+    <div class="container">
+      <p class="text-sm muted" data-menu-count style="margin-bottom:1rem;">Showing 8 artisan offerings</p>
+
+      <div class="grid grid-4" data-menu-grid>
+
+        <article class="card" data-menu-item data-categories="coffee iced hot">
+          <div class="card-media">
+            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=700&auto=format&fit=crop" alt="Spanish Latte over ice">
+            <span class="badge">Best Seller</span>
+          </div>
+          <div class="card-body">
+            <div>
+              <div style="display:flex;justify-content:space-between;align-items:baseline;"><h3>Spanish Latte</h3><strong style="color:var(--primary);">₱195</strong></div>
+              <p class="text-sm muted" style="margin-top:.25rem;">Double espresso pulled over velvety condensed milk and smooth steamed dairy.</p>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <span class="text-sm" style="color:var(--secondary);">Balanced Roast</span>
+              <button class="btn btn-dark btn-sm" data-order="Spanish Latte">Order</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-menu-item data-categories="coffee non-coffee iced">
+          <div class="card-media">
+            <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=700&auto=format&fit=crop" alt="Ube Latte in a tall glass">
+            <span class="badge">Signature</span>
+          </div>
+          <div class="card-body">
+            <div>
+              <div style="display:flex;justify-content:space-between;align-items:baseline;"><h3>Ube Latte</h3><strong style="color:var(--primary);">₱210</strong></div>
+              <p class="text-sm muted" style="margin-top:.25rem;">Handcrafted slow-cooked heirloom ube halaya layered with specialty espresso.</p>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <span class="text-sm" style="color:var(--secondary);">House Favorite</span>
+              <button class="btn btn-dark btn-sm" data-order="Ube Latte">Order</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-menu-item data-categories="coffee iced">
+          <div class="card-media">
+            <img src="https://images.unsplash.com/photo-1517701604599-bb29b565090c?q=80&w=700&auto=format&fit=crop" alt="Cloud Americano with aerated crema">
+            <span class="badge badge-alt">Popular</span>
+          </div>
+          <div class="card-body">
+            <div>
+              <div style="display:flex;justify-content:space-between;align-items:baseline;"><h3>Cloud Americano</h3><strong style="color:var(--primary);">₱165</strong></div>
+              <p class="text-sm muted" style="margin-top:.25rem;">Single-origin iced americano crowned with a delicate, aerated cloud of milk foam.</p>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <span class="text-sm" style="color:var(--secondary);">Light &amp; Crisp</span>
+              <button class="btn btn-dark btn-sm" data-order="Cloud Americano">Order</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-menu-item data-categories="coffee hot">
+          <div class="card-media">
+            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=700&auto=format&fit=crop" alt="Flat White with glossy microfoam">
+            <span class="badge">Hot</span>
+          </div>
+          <div class="card-body">
+            <div>
+              <div style="display:flex;justify-content:space-between;align-items:baseline;"><h3>Flat White</h3><strong style="color:var(--primary);">₱180</strong></div>
+              <p class="text-sm muted" style="margin-top:.25rem;">Bold ristretto shots crowned with a velvety, thin veil of glossy microfoam.</p>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <span class="text-sm" style="color:var(--secondary);">Ristretto Core</span>
+              <button class="btn btn-dark btn-sm" data-order="Flat White">Order</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-menu-item data-categories="non-coffee iced hot">
+          <div class="card-media">
+            <img src="https://images.unsplash.com/photo-1515823064-d6e0c04616a7?q=80&w=700&auto=format&fit=crop" alt="Ceremonial matcha being whisked">
+            <span class="badge">Signature</span>
+          </div>
+          <div class="card-body">
+            <div>
+              <div style="display:flex;justify-content:space-between;align-items:baseline;"><h3>Ceremonial Matcha</h3><strong style="color:var(--primary);">₱220</strong></div>
+              <p class="text-sm muted" style="margin-top:.25rem;">First-harvest Uji matcha whisked per order with creamy lightly sweet milk.</p>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <span class="text-sm" style="color:var(--secondary);">First Harvest</span>
+              <button class="btn btn-dark btn-sm" data-order="Ceremonial Matcha">Order</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-menu-item data-categories="coffee iced">
+          <div class="card-media">
+            <img src="https://images.unsplash.com/photo-1521302200778-33500795e128?q=80&w=700&auto=format&fit=crop" alt="Sea Salt Cold Brew with caramel">
+            <span class="badge badge-alt">New</span>
+          </div>
+          <div class="card-body">
+            <div>
+              <div style="display:flex;justify-content:space-between;align-items:baseline;"><h3>Sea Salt Cold Brew</h3><strong style="color:var(--primary);">₱190</strong></div>
+              <p class="text-sm muted" style="margin-top:.25rem;">16-hour steeped Ethiopian cold brew balanced with smoked salted caramel.</p>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <span class="text-sm" style="color:var(--secondary);">Slow Steeped</span>
+              <button class="btn btn-dark btn-sm" data-order="Sea Salt Cold Brew">Order</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-menu-item data-categories="pastries hot">
+          <div class="card-media">
+            <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?q=80&w=700&auto=format&fit=crop" alt="Butter croissant fresh from the oven">
+            <span class="badge">Pastries</span>
+          </div>
+          <div class="card-body">
+            <div>
+              <div style="display:flex;justify-content:space-between;align-items:baseline;"><h3>Butter Croissant</h3><strong style="color:var(--primary);">₱145</strong></div>
+              <p class="text-sm muted" style="margin-top:.25rem;">Baked fresh daily with Normandy cultured butter, airy honeycomb interior.</p>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <span class="text-sm" style="color:var(--secondary);">Cultured Butter</span>
+              <button class="btn btn-dark btn-sm" data-order="Butter Croissant">Order</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card" data-menu-item data-categories="food">
+          <div class="card-media">
+            <img src="https://images.unsplash.com/photo-1541519227354-08fa5d50c44d?q=80&w=700&auto=format&fit=crop" alt="Truffle mushroom toast on sourdough">
+            <span class="badge">Food</span>
+          </div>
+          <div class="card-body">
+            <div>
+              <div style="display:flex;justify-content:space-between;align-items:baseline;"><h3>Truffle Mushroom Toast</h3><strong style="color:var(--primary);">₱285</strong></div>
+              <p class="text-sm muted" style="margin-top:.25rem;">Wild forest mushrooms sautéed in white truffle oil atop thick-cut sourdough.</p>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;">
+              <span class="text-sm" style="color:var(--secondary);">Artisan Sourdough</span>
+              <button class="btn btn-dark btn-sm" data-order="Truffle Mushroom Toast">Order</button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ROASTING CALIBRATION -->
+  <section class="bg-surface" style="padding-bottom:4rem;">
+    <div class="container">
+      <div class="split" style="background:var(--surface-container-low);border-radius:var(--radius-xl);padding:2rem;">
+        <div class="stack-md">
+          <span class="eyebrow">◇ Direct Farm Origins</span>
+          <h2>Tailored Roasting Calibration</h2>
+          <p class="muted">Every bean is imported through traceable single-estate direct partnerships in Bukidnon, Benguet, and Sidama. In-house cupping ensures optimal extraction curves whether served over glacier ice or extracted under 9 bars of pressure.</p>
+          <div class="grid grid-3" style="gap:1rem;">
+            <div class="pill-stat" style="flex-direction:column;align-items:flex-start;">
+              <strong style="font-family:var(--font-serif);font-size:22px;color:var(--primary);">88.5+</strong>
+              <span class="text-sm muted">SCA Score</span>
+            </div>
+            <div class="pill-stat" style="flex-direction:column;align-items:flex-start;">
+              <strong style="font-family:var(--font-serif);font-size:22px;color:var(--primary);">100%</strong>
+              <span class="text-sm muted">Traceable</span>
+            </div>
+            <div class="pill-stat" style="flex-direction:column;align-items:flex-start;">
+              <strong style="font-family:var(--font-serif);font-size:22px;color:var(--primary);">Normandy</strong>
+              <span class="text-sm muted">Butter Base</span>
+            </div>
+          </div>
+        </div>
+        <div class="rounded-xl shadow-lg" style="overflow:hidden;aspect-ratio:4/3;">
+          <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?q=80&w=1000&auto=format&fit=crop" alt="Roastmaster monitoring a coffee roasting machine">
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <div style="display:flex;align-items:center;gap:.6rem;">
+        <span class="brand-mark" style="background:var(--surface-bright);color:var(--primary);">AR</span>
+        <span class="brand-name" style="color:var(--surface-bright);">Atelier Roast</span>
+      </div>
+      <p style="font-family:var(--font-serif);font-style:italic;font-size:20px;color:var(--surface-container-high);margin-top:1rem;max-width:22rem;">Coffee, crafted for every moment.</p>
+      <p class="text-sm" style="color:var(--on-primary-container);margin-top:.75rem;max-width:26rem;">Dedicated to elevating bean selection, artisanal roasting profiles, and intimate tasting experiences in European-inspired spaces.</p>
+      <div style="margin-top:1.75rem;">
+        <p class="eyebrow" style="color:var(--on-primary-container);margin-bottom:.5rem;">The Monograph Journal</p>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Enter your personal email" required aria-label="Email address">
+          <button class="btn btn-inverse btn-sm" type="submit">Join</button>
+        </form>
+      </div>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="index.html">Home Spread</a></li>
+        <li><a href="menu.html">Tasting Menu</a></li>
+        <li><a href="our-story.html">Our Ethos &amp; Story</a></li>
+        <li><a href="branches.html">Boutique Branches</a></li>
+        <li><a href="events.html">Salon Events</a></li>
+        <li><a href="franchise.html">Partnership &amp; Franchise</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Spaces &amp; Services</h4>
+      <ul>
+        <li><a href="branches.html">Kau'i Sala Tasting Room</a></li>
+        <li><a href="events.html">Private Salon Catering</a></li>
+        <li><a href="our-story.html">Small-Batch Roastery Lab</a></li>
+        <li><a href="menu.html">Subscription Curations</a></li>
+        <li><a href="branches.html">Architectural Residencies</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Connect &amp; Inquire</h4>
+      <ul>
+        <li><a href="#">Instagram</a></li>
+        <li><a href="#">Facebook Gazette</a></li>
+        <li><a href="mailto:concierge@atelierroast.com">concierge@atelierroast.com</a></li>
+        <li><span style="color:var(--on-primary-container);font-size:13px;">+44 (0) 20 7946 0912</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <p>© 2025 Atelier Roast Specialty Roasters. Crafted with quiet precision.</p>
+    <div class="legal">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">Sourcing Disclosures</a>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" role="status" aria-live="polite"></div>
+<script src="js/script.js"></script>
+</body>
+</html>
