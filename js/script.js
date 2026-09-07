@@ -140,3 +140,125 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 });
+
+/* ---------- Gathering detail modal ---------- */
+const packageDetails = {
+  breakfast: {
+    eyebrow: 'Morning',
+    title: 'Celebratory Breakfast',
+    description: 'A relaxed morning spread with pastries, brunch plates, and a rotating filter-coffee bar.',
+    duration: '2.5 hours',
+    capacity: 'Up to 20 guests',
+    price: '₱18,000',
+    includes: [
+      'Room styling & fresh florals',
+      'Dedicated barista service',
+      'Custom pastry & brunch plate selection',
+      'Printed tasting menus'
+    ],
+    images: [
+      'https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=1000&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1555507036-ab1f4038808a?q=80&w=600&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=600&auto=format&fit=crop'
+    ]
+  },
+  retreat: {
+    eyebrow: 'Most Booked',
+    title: 'Corporate Retreat',
+    description: 'Full-day salon access with a coffee cupping session, AV setup, and continuous beverage service.',
+    duration: 'Full day',
+    capacity: 'Up to 35 guests',
+    price: '₱42,000',
+    includes: [
+      'Full-day room booking with AV setup',
+      'Guided coffee cupping session',
+      'Continuous coffee & tea service',
+      'Dedicated event coordinator'
+    ],
+    images: [
+      'https://images.unsplash.com/photo-1521017432531-fbd92d768814?q=80&w=1000&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1442512595331-e89e73853f31?q=80&w=600&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1493857671505-72967e2e2760?q=80&w=600&auto=format&fit=crop'
+    ]
+  },
+  salon: {
+    eyebrow: 'Evening',
+    title: "Book Reading & Salon Night",
+    description: 'An intimate evening setup with low lighting, a curated dessert pairing, and quiet acoustics.',
+    duration: '3 hours',
+    capacity: 'Up to 25 guests',
+    price: '₱22,000',
+    includes: [
+      'Ambient evening lighting setup',
+      'Curated dessert pairing menu',
+      'Dedicated barista service',
+      'Quiet acoustic arrangement'
+    ],
+    images: [
+      'https://images.unsplash.com/photo-1521017432531-fbd92d768814?q=80&w=1000&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1515823064-d6e0c04616a7?q=80&w=600&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=600&auto=format&fit=crop'
+    ]
+  }
+};
+
+const modalOverlay = document.querySelector('[data-modal-overlay]');
+if (modalOverlay) {
+  const modalGallery = modalOverlay.querySelector('[data-modal-gallery]');
+  const modalEyebrow = modalOverlay.querySelector('[data-modal-eyebrow]');
+  const modalTitle = modalOverlay.querySelector('[data-modal-title]');
+  const modalDescription = modalOverlay.querySelector('[data-modal-description]');
+  const modalDuration = modalOverlay.querySelector('[data-modal-duration]');
+  const modalCapacity = modalOverlay.querySelector('[data-modal-capacity]');
+  const modalPrice = modalOverlay.querySelector('[data-modal-price]');
+  const modalIncludes = modalOverlay.querySelector('[data-modal-includes]');
+  const modalInquireBtn = modalOverlay.querySelector('[data-modal-inquire]');
+  let lastFocused = null;
+
+  function openPackageModal(key) {
+    const pkg = packageDetails[key];
+    if (!pkg) return;
+
+    modalGallery.innerHTML = pkg.images.map(src => `<img src="${src}" alt="${pkg.title} setup">`).join('');
+    modalEyebrow.textContent = pkg.eyebrow;
+    modalTitle.textContent = pkg.title;
+    modalDescription.textContent = pkg.description;
+    modalDuration.textContent = pkg.duration;
+    modalCapacity.textContent = pkg.capacity;
+    modalPrice.textContent = pkg.price;
+    modalIncludes.innerHTML = pkg.includes.map(item => `<li>· ${item}</li>`).join('');
+    modalInquireBtn.onclick = () => {
+      closePackageModal();
+      const select = document.getElementById('ev-package');
+      if (select) select.value = pkg.title;
+    };
+
+    lastFocused = document.activeElement;
+    modalOverlay.hidden = false;
+    requestAnimationFrame(() => modalOverlay.classList.add('is-open'));
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closePackageModal() {
+    modalOverlay.classList.remove('is-open');
+    document.body.style.overflow = '';
+    setTimeout(() => { modalOverlay.hidden = true; }, 300);
+    if (lastFocused) lastFocused.focus();
+  }
+
+  document.querySelectorAll('[data-view-package]').forEach(btn => {
+    btn.addEventListener('click', () => openPackageModal(btn.dataset.viewPackage));
+  });
+
+  modalOverlay.querySelectorAll('[data-modal-close]').forEach(el =>
+    el.addEventListener('click', closePackageModal)
+  );
+
+  modalOverlay.addEventListener('click', (e) => {
+    if (e.target === modalOverlay) closePackageModal();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modalOverlay.classList.contains('is-open')) closePackageModal();
+  });
+}

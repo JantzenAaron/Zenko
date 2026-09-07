@@ -49,7 +49,7 @@
 <main style="padding-top:5rem;">
 
   <!-- HERO -->
-  <section class="bg-surface section-pad" style="padding-bottom:2rem;">
+  <section class="bg-surface section-pad" id="booking-form" style="padding-bottom:2rem;">
     <div class="container split">
       <div class="stack-lg" data-reveal>
         <span class="eyebrow">Private Events • Meetings • Gatherings</span>
@@ -88,7 +88,7 @@
             </ul>
             <div style="display:flex;justify-content:space-between;align-items:center;margin-top:.75rem;">
               <strong style="color:var(--primary);">From ₱18,000</strong>
-              <button class="btn btn-dark btn-sm" data-order="Celebratory Breakfast inquiry">Inquire</button>
+<button class="btn btn-dark btn-sm" data-view-package="breakfast">View</button>
             </div>
           </div>
         </article>
@@ -104,7 +104,7 @@
             </ul>
             <div style="display:flex;justify-content:space-between;align-items:center;margin-top:.75rem;">
               <strong style="color:var(--primary);">From ₱42,000</strong>
-              <button class="btn btn-dark btn-sm" data-order="Corporate Retreat inquiry">Inquire</button>
+<button class="btn btn-dark btn-sm" data-view-package="retreat">View</button>
             </div>
           </div>
         </article>
@@ -120,7 +120,7 @@
             </ul>
             <div style="display:flex;justify-content:space-between;align-items:center;margin-top:.75rem;">
               <strong style="color:var(--primary);">From ₱22,000</strong>
-              <button class="btn btn-dark btn-sm" data-order="Salon Night inquiry">Inquire</button>
+              <button class="btn btn-dark btn-sm" data-view-package="salon-night">View</button>
             </div>
           </div>
         </article>
@@ -228,7 +228,45 @@
     </div>
   </div>
 </footer>
+<!-- GATHERING DETAIL MODAL -->
+<div class="modal-overlay" data-modal-overlay hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <button class="modal-close" data-modal-close aria-label="Close">&times;</button>
 
+    <div class="modal-gallery" data-modal-gallery></div>
+
+    <div class="modal-body">
+      <span class="eyebrow" data-modal-eyebrow>Package</span>
+      <h2 id="modal-title" data-modal-title style="margin-top:.3rem;">Package Name</h2>
+      <p class="muted" data-modal-description style="margin-top:.5rem;">Description goes here.</p>
+
+      <div class="grid grid-3" style="gap:1rem;margin-top:1.25rem;">
+        <div class="pill-stat" style="flex-direction:column;align-items:flex-start;">
+          <span class="eyebrow">Duration</span>
+          <strong data-modal-duration style="color:var(--primary);">—</strong>
+        </div>
+        <div class="pill-stat" style="flex-direction:column;align-items:flex-start;">
+          <span class="eyebrow">Capacity</span>
+          <strong data-modal-capacity style="color:var(--primary);">—</strong>
+        </div>
+        <div class="pill-stat" style="flex-direction:column;align-items:flex-start;">
+          <span class="eyebrow">Starting At</span>
+          <strong data-modal-price style="color:var(--primary);">—</strong>
+        </div>
+      </div>
+
+      <div style="margin-top:1.25rem;">
+        <span class="eyebrow">What's Included</span>
+        <ul class="text-sm muted stack-xs" data-modal-includes style="margin-top:.5rem;"></ul>
+      </div>
+
+      <div style="display:flex;gap:1rem;margin-top:1.5rem;flex-wrap:wrap;">
+        <a class="btn btn-primary" href="#booking-form" data-modal-inquire>Request This Package</a>
+        <button class="btn btn-quiet" data-modal-close>Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 <div class="toast" role="status" aria-live="polite"></div>
 <script src="js/script.js"></script>
 </body>
