@@ -199,7 +199,66 @@ const packageDetails = {
       'https://images.unsplash.com/photo-1515823064-d6e0c04616a7?q=80&w=600&auto=format&fit=crop',
       'https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=600&auto=format&fit=crop'
     ]
-  }
+  },
+  'cart-small': {
+  eyebrow: 'Small Gathering',
+  title: 'Intimate Cart',
+  description: 'A compact espresso cart setup, perfect for small celebrations, home parties, and small office pop-ups.',
+  duration: '2 hours',
+  capacity: '1–50 cups',
+  price: '₱12,000',
+  includes: [
+    '1 dedicated barista',
+    'Espresso, latte & iced coffee menu',
+    'Cart setup, cups & napkins included',
+    'Delivery within Metro Manila'
+  ],
+  images: [
+    'https://images.unsplash.com/photo-1461023058943-07fcbe16d735?q=80&w=1000&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=600&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1517701604599-bb29b565090c?q=80&w=600&auto=format&fit=crop'
+  ]
+},
+'cart-medium': {
+  eyebrow: 'Most Booked',
+  title: 'Classic Cart',
+  description: 'Our most-requested mobile bar setup — built for weddings, launches, and mid-size events.',
+  duration: '3 hours',
+  capacity: '51–100 cups',
+  price: '₱22,000',
+  includes: [
+    '2 dedicated baristas',
+    'Full signature drinks menu',
+    'Custom menu signage',
+    'Cart setup, cups & napkins included',
+    'Delivery within Metro Manila'
+  ],
+  images: [
+    'https://images.unsplash.com/photo-1521017432531-fbd92d768814?q=80&w=1000&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1515823064-d6e0c04616a7?q=80&w=600&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1509042239860-f550ce710b93?q=80&w=600&auto=format&fit=crop'
+  ]
+},
+'cart-large': {
+  eyebrow: 'Large Event',
+  title: 'Grand Cart',
+  description: 'Full-scale mobile service for conferences, large receptions, and brand activations.',
+  duration: '4 hours',
+  capacity: '101–150 cups',
+  price: '₱35,000',
+  includes: [
+    '3 dedicated baristas',
+    'Full signature drinks menu + seasonal specials',
+    'Branded cart wrap available on request',
+    'Cart setup, cups & napkins included',
+    'Delivery within Metro Manila (outside Metro Manila on request)'
+  ],
+  images: [
+    'https://images.unsplash.com/photo-1442512595331-e89e73853f31?q=80&w=1000&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1493857671505-72967e2e2760?q=80&w=600&auto=format&fit=crop',
+    'https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=600&auto=format&fit=crop'
+  ]
+}
 };
 
 const modalOverlay = document.querySelector('[data-modal-overlay]');
